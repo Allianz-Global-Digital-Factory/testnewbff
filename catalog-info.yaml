@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "testbffnew"
+  description: ""
+  annotations:
+    github.com/project-slug: Allianz-Global-Digital-Factory/testnewbff
+    backstage.io/techdocs-ref: dir:.
+    jenkins.io/job-full-name: 'testjenkins'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "all_devs"
+  providesApis:
+    - vehicle-brands-sample

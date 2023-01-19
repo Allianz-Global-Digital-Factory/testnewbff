@@ -1,0 +1,44 @@
+namespace: testbffnew
+
+app:
+  nameOverride: ""
+  jarName: testbffnew
+  fullnameOverride: ""
+  replicaCount: 1
+  serviceAccount:
+    create: true
+    annotations: {}
+    name: testbffnew
+  image:
+    registry: 
+    repository: ""
+    tag: 0.4.0
+    pullPolicy: Always
+  service:
+    type: ClusterIP
+    port: 8084
+  config:
+    cisl:
+      commonsDispatcherUrl: ""
+      authUrl: ""
+    uploadLibrary:
+      cislAuthUrl: ""
+      cislUrl: ""
+      redisHostName: ""
+  podAnnotations: {}
+  resources: {}
+ingress:
+  enabled: true
+  annotations: {
+    kubernetes.io/ingress.class: nginx
+  }
+  hosts:
+  - host: testbffnew.backstage-prod.itmp-fa-asset.we1.azure.aztec.cloud.allianz
+    paths:
+      - path: /
+  #tls:
+  #- hosts:
+  #  - testbffnew.itmp-nprd-frontend.azt-core.we1.azure.aztec.cloud.allianz
+  #  secretName: testbffnew-ingress-tls
+
+
